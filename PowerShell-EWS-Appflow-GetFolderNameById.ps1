@@ -37,7 +37,9 @@ $EwsEndpoint = 'https://outlook.office365.com/EWS/Exchange.asmx'
 # Optional: log SOAP request/response (avoid logging secrets/tokens in real environments)
 $LogPath = Join-Path $PSScriptRoot 'ews_getfolder_log.txt'
 
-# Add credentials
+# Add credentials - This will override $TenantId, $ClientId and $ClientSecret set above.
+# Using this file you can hide the credentials set while testing and showing the running code.
+# Comment out the two lines below if you want to just use the credentails set in this file above.
 $include = Join-Path $PSScriptRoot 'PowerShell-EWS-Appflow-FoldersExample_Creds.ps1'  # TODO: Update this file to set application oAuth credentails.
 . $include
 
